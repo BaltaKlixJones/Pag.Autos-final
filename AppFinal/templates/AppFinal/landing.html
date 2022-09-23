@@ -22,14 +22,17 @@
 				<!-- Note: The "styleN" class below should match that of the banner element. -->
 					<header id="header" class="alt style2">
 						<a href="{% url 'inicio' %}" class="logo"><strong>Inicio</strong> <span>By equipo coder</span></a>
+						
 						<nav>
 							{% block navegacion %} {% endblock %}
-		
+							<a href="#menu" class="logo">Buscar Vehiculo</a>
+							<a href="{% url 'editarPerfil' %}" class="logo">{{ user.username }}</a>
+						
 						</nav>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
+						</header>
+						
+						<!-- Menu -->
+						<nav id="menu">
 						<ul class="links">
 							<li><a href="{% url 'autos' %}">Autos</a></li>
 							<li><a href="{% url 'motos' %}">Motos</a></li>
@@ -39,9 +42,10 @@
 						</ul>
 						<ul class="actions stacked">
 							
-							
 						</ul>
-					</nav>
+						</nav>
+		
+						
 					<!-- Autos -->
 					<nav id="menu">
 						<ul class="links">

@@ -1,6 +1,8 @@
+from contextlib import nullcontext
 import email
 from email import message
 from pipes import Template
+import re
 from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -11,15 +13,15 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.generic import TemplateView , View
 
-from .forms import AutoFormulario, MotoFormulario, AvionFormulario, CamionFormulario, UserRegisterForm, UserEditForm
-from .models import Autos, Motos, Aviones, Camiones
+from .forms import AutoFormulario, MotoFormulario, AvionFormulario, CamionFormulario, UserRegisterForm, UserEditForm, AvatarForm
+from .models import Autos, Avatar, Motos, Aviones, Camiones
 
 # Create your views here.
 
 # Pagina de inicio
 @login_required
 def inicio(request):
-    return render (request, "AppFinal/inicio.html")
+    return render (request, "AppFinal/inicio.html", {'imagen':obtenerAvatar(request)})
 
 #.............................................................................#
 # login
@@ -33,7 +35,7 @@ def login_request(request):
             usuario = authenticate(username= usu, password= clave)
             if usuario is not None:
                 login(request, usuario)
-                return render(request, "AppFinal/inicio.html", {'form':form, 'mensaje': f"Bienvenido {usuario}"})
+                return render(request, "AppFinal/inicio.html", {'form':form, 'mensaje': f"Bienvenido {usuario}", 'imagen':obtenerAvatar(request)})
             else:
                 return render (request, "AppFinal/login.html", {'form':form, 'mensaje': 'Usuario o contraseña incorrectos'})
         else:
@@ -53,7 +55,7 @@ def register(request):
             
             form.save()
             
-            return render (request, "AppFinal/inicio.html", {'mensaje': f"Usuario creado! Bienvenido {username}!"})
+            return render (request, "AppFinal/login.html", {'mensaje': f"Usuario creado! Inicia sesion!"})
     else:
         form = UserRegisterForm()
     return render (request, "AppFinal/register.html", {'form': form})
@@ -325,7 +327,37 @@ def editarPerfil(request):
             return render (request, "AppFinal/inicio.html", { "mensaje": f"Usuario {usuario} editado con exito!"})
     else:
         form = UserEditForm(instance= usuario)
-    return render (request, "AppFinal/editarPerfil.html", {"form": form, "usuario": usuario})
+        
+
+        return render (request, "AppFinal/editarPerfil.html", {"form": form, "usuario": usuario, 'imagen':obtenerAvatar(request)})
+
+#............................................................................#
+# SECCION AVATAR
+
+# Cambiar avatar
+def agregarAvatar(request): 
+    if request.method == "POST":
+        formulario=AvatarForm(request.POST, request.FILES)
+        if formulario.is_valid():
+            avatarViejo=Avatar.objects.filter(user=request.user)
+            if (len(avatarViejo)> 0):
+                avatarViejo.delete()
+            avatar=Avatar(user=request.user, imagen= formulario.cleaned_data['imagen'])
+            avatar.save()
+            return render(request, "AppFinal/agregarAvatar.html", {'usuario': request.user, 'mensaje': 'Cambios guardados!'})
+    else:
+        formulario=AvatarForm()
+    return render(request, "AppFinal/agregarAvatar.html", {'form':formulario, 'usuario':request.user, 'imagen':obtenerAvatar(request)})
+
+# Funcion para obtener Avatar
+
+def obtenerAvatar(request):
+    lista = Avatar.objects.filter(user=request.user)
+    if len(lista) != 0:
+        imagen= lista[0].imagen.url
+    else: 
+        imagen = "/static/AppFinal/assets/images/Avatar-defecto.jpg"
+    return imagen
 
 
 #.............................................................................#

@@ -49,3 +49,6 @@ class UserEditForm(UserCreationForm):
         model= User 
         fields = ['username', 'first_name', 'last_name', 'password1', 'password2'] 
         help_texts = {k:"" for k in fields}
+
+class AvatarForm(forms.Form):
+    imagen = forms.ImageField(label="Imagen")

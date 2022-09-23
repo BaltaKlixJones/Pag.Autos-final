@@ -4132,3 +4132,15 @@ body.is-buscar-visible #buscar {
 		visibility: visible;
 	}
 
+
+.login-register {
+	width: 300px;
+	background: rgb(98, 73, 220);
+	padding: 30px;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.avatarperfil {
+	height: 200px;
+}

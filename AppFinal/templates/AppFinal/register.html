@@ -21,17 +21,30 @@
 {% endblock %}
 
 {% block historia %}
-
-    <h1>Registarse</h1>
+<div style="width: 500px;
+	padding: 30px;
+	margin: auto;
+	margin-top: 10px;
+    background: rgba(1, 8, 89, 0.238);">
+    <h1 style="margin: auto;">
+        Registarse
+    </h1>
     <h3>{{ mensaje }}</h3>
-<div style="width: 500px ;">
+
+<div style="width: 450px ;">
     <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
         
 
         {{ form.as_p }}
-        <button type="submit" class="button"> Registarse </button>
+        <button type="submit" class="button"  style="width: 100%;"> Registarse </button>
+        <div style="padding: 10px; text-align: center;">
+        <a href="{% url 'login' %}">
+        <p>¿Ya tienes cuenta? Inicia sesión</p>
+        </a>
+         </div>
 
     </form>
+        </div>
 </div>
 {% endblock %}
 

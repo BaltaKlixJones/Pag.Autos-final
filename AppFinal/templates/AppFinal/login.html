@@ -8,7 +8,8 @@
 {% endblock %}
 
 {% block tituloinicio %} 
-<h1>Inicia sesion </h1>
+<h1>Necesitas iniciar sesión para entrar a la página </h1>
+{{ mensaje }}
 {% endblock %}
 
 
@@ -18,17 +19,25 @@
 
 {% block historia %}
 
-    <h1>Login</h1>
+<section >
+    <div style="width: 500px;
+	padding: 30px;
+	margin: auto;
+	margin-top: 10px;
+    background: rgba(1, 8, 89, 0.238);">
+    <h1 style="margin: auto;">
+        Login
+    </h1>
     <h3>{{ mensaje }}</h3>
-<div style="width: 500px ;">
-    <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
-        
+        <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+            
 
-        {{ form.as_p }}
-        <button type="submit" class="button"> Iniciar Sesion </button>
-    </form>
+            {{ form.as_p }}
+            <button type="submit" class="button-login" style="width: 100%;"> Iniciar Sesión </button>
+        </form>
+    
+</section>
 </div>
-
 {% endblock %}
 
 {% block imagenesinicio %}

@@ -21,10 +21,21 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="{% url 'inicio' %}" class="logo"><strong>Inicio</strong> <span>by equipo coder</span></a>
+						<a href="{% url 'inicio' %}" class="logo"><strong>Inicio</strong> <span>by equipocoder</span></a>
+						
 						<nav>	
+							{% block botones %}{% endblock %}
 							
-							{% block botones %} {% endblock %}
+							<a href="{% url 'editarPerfil' %}">
+								
+								<span>
+									<img src="{{ imagen }}" alt="" style="height: 60px; width: 60px; margin: 7px auto; border-radius: 50%;">
+									
+								</span>
+							
+							</a>
+							
+							
 						</nav>
 						
 					</header>

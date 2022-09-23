@@ -35,6 +35,6 @@ urlpatterns = [
     # ..................Editar Perfil.......................
     path('editarPerfil/', editarPerfil, name= 'editarPerfil'),
     # ......................Otro......................
-
+    path('agregarAvatar/', agregarAvatar, name= 'agregarAvatar'),
     path('elements/', elem, name='elements'),
 ]
