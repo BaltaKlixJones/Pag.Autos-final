@@ -1,0 +1,39 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Aviones</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Aviones</h1>
+{% endblock %}
+
+{% block subtitulo %}
+<p>Son los vehiculos mas seguros y rapidos para viajar</p>
+{% endblock %}
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/vwinicio.jpg" alt="" />
+{% endblock %}
+
+{% block cargar %} 
+{{ mensaje }}
+<h2>Agrega tu avion preferido:</h2>
+{% endblock %}
+
+{% block historia %}
+<div style="width: 500px ;">
+    <form method="POST"> {% csrf_token %}
+        <table>
+
+            {{ formulario.as_table }}
+
+        </table>
+
+        <input type="submit", value="Guardar">
+    </form>
+</div>
+{% endblock %}

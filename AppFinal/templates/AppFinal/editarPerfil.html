@@ -1,0 +1,53 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Editar Usuario</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Perfil</h1> 
+{% endblock %}
+
+{% block subtitulo %}
+{% endblock %}
+
+{% block imagentitulo %}
+ 
+{% endblock %}
+
+{% block cargar %} 
+{% endblock %}
+
+{% block historia %}
+<h1>AVATAR</h1>
+<hr>
+<h1>Editar perfil de {{ usuario }}</h1>
+<h3>{{ mensaje }}</h3>
+<div style="width: 500px ;">
+    <form action="{% url 'editarPerfil' %}" method="POST"> {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <button type="submit" class="button"> Guardar cambios </button>
+        <a href="{% url 'inicio' %}" class="button back">Volver</a>
+
+    </form>
+</div>
+{% endblock %}
+
+{% block info1 %}
+{% endblock %}
+
+
+{% block nuestrosvehiculos %} 
+{% endblock %}
+
+{% block crear %}
+{% endblock %}
+
+
+
+

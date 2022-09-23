@@ -1,0 +1,67 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+
+{% block titulo %}
+
+<title>Inicio</title>
+
+{% endblock %}
+
+{% block mensaje %}
+
+<h3>{{ mensaje }}</h3>
+
+{% endblock %}
+
+{% block botones %}
+<a href="#menu" class="btn btn-outline-dark">Buscar vehiculo</a>
+<a href="{% url 'logout' %}" class="btn btn-outline-dark">Cerrar sesion</a>
+<a href="{% url 'editarPerfil' %}" class="btn btn-outline-dark">Perfil</a>
+
+{% endblock %}
+
+{% block imagenes %}
+<div id="main">
+
+    <!-- One -->
+        <section id="one" class="tiles">
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/ferrari.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'autos' %}" class="link">Autos</a></h3>
+                    <p>Los mejores autos deportivos </p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/moto.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'motos' %}" class="link">Motos</a></h3>
+                    <p>Motos de carreras y de paseos</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/avion.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'aviones' %}" class="link">Aviones</a></h3>
+                    <p>Existen diferentes tipos de aviones...</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/camion.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'camiones' %}" class="link">Camiones</a></h3>
+                    <p>Largas distancias y cargas pesadas</p>
+                </header>
+            </article>
+            
+        </section>
+{% endblock %}
+
