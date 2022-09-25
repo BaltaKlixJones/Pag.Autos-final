@@ -1,17 +1,12 @@
-from contextlib import nullcontext
-import email
-from email import message
-from pipes import Template
-import re
 from urllib import request
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.generic import TemplateView , View
+from django.views.defaults import page_not_found
 
 from .forms import AutoFormulario, MotoFormulario, AvionFormulario, CamionFormulario, UserRegisterForm, UserEditForm, AvatarForm
 from .models import Autos, Avatar, Motos, Aviones, Camiones
@@ -104,7 +99,7 @@ def buscarautos(request):
         return render (request, "AppFinal/resultadoBusquedaAutos.html", {"mensaje": "No se enviaron datos!"})
 
 # ver autos para editar
-
+@login_required
 def leerautos(request):
     leerautos= Autos.objects.all()
     return render (request, "AppFinal/leerautos.html", {"leerautos": leerautos})
@@ -179,7 +174,7 @@ def buscarmotos(request):
     else:
         return render (request, "AppFinal/resultadoBusquedaMoto.html", {"mensaje": "No se enviaron datos!"})
 # ver motos para editar
-
+@login_required
 def leermotos(request):
     leermotos= Motos.objects.all()
     return render (request, "AppFinal/leermotos.html", {"leermotos": leermotos})
@@ -247,6 +242,7 @@ def buscarcamiones(request):
         return render (request, "AppFinal/resultadoBusquedaCamion.html", {"mensaje": "No se enviaron datos!"})
 
 # ver camiones para editar
+@login_required
 def leercamiones(request):
     leercamiones= Camiones.objects.all()
     return render (request, "AppFinal/leercamiones.html", {"leercamiones": leercamiones})
@@ -335,6 +331,7 @@ def editarPerfil(request):
 # SECCION AVATAR
 
 # Cambiar avatar
+@login_required
 def agregarAvatar(request): 
     if request.method == "POST":
         formulario=AvatarForm(request.POST, request.FILES)
@@ -366,10 +363,11 @@ def obtenerAvatar(request):
 def nosotros(request):
     pass
 
-# Manejo de errores
+# Manejo de error 404
+def not_found(request):
+    return render(request, "AppFinal/not-found.html")
 
-def handler404(request, exception):
-    return render (request, "AppFinal/error_404.html")
+
 
 
 
