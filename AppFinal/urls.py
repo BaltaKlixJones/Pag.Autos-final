@@ -38,4 +38,8 @@ urlpatterns = [
     path('agregarAvatar/', agregarAvatar, name= 'agregarAvatar'),
     path('Error/', not_found, name= 'not-found'),
     path('elements/', elem, name='elements'),
+    # ......................Otro......................
+    
+
+
 ]
