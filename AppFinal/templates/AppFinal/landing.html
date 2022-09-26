@@ -95,10 +95,51 @@
 							<section id="two" class="spotlights">
 								<section>
 									{% block info1 %} {% endblock %}
+									
+
 								
 								</section>
 
 						<!-- Three -->
+						<section style="width: 60px;">
+							<div style="width: 60px;">
+								<article>
+									<span >
+										<img src="/static/AppFinal/assets/images/ferrari.inicio.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="{% url 'autos' %}" class="link">Autos</a></h3>
+										<p>Los mejores autos deportivos </p>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+										<img src="/static/AppFinal/assets/images/moto.inicio.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="{% url 'motos' %}" class="link">Motos</a></h3>
+										<p>Motos de carreras y de paseos</p>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+										<img src="/static/AppFinal/assets/images/avion.inicio.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="{% url 'aviones' %}" class="link">Aviones</a></h3>
+										<p>Existen diferentes tipos de aviones...</p>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+										<img src="/static/AppFinal/assets/images/camion.inicio.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="{% url 'camiones' %}" class="link">Camiones</a></h3>
+										<p>Largas distancias y cargas pesadas</p>
+									</header>
+								</article>
+						</section>
 							<section id="three">
 								<div class="inner">
 									{% block nuestrosvehiculos %} {% endblock %}
@@ -106,12 +147,15 @@
 							</section>
 
 					</div>
+					
 
 				<!-- Contact -->
+				
 					<section id="contact">
 						<div class="inner">
 							<section>
 								{% block crear %} {% endblock %}
+								
 							</section>
 							<section class="split">
 								<section>
@@ -119,9 +163,14 @@
 										
 										{% block buscarpormarca %} {% endblock %}
 										
+										
 									</div>
 								</section>
-								
+								<div id="main">
+
+				<!-- One -->
+					
+				
 
 				<!-- Footer -->
 					<footer id="footer">
