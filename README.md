@@ -8,6 +8,7 @@ Grupo de Baltasar Klix Jones, Andres Sosa, Bautista Troccalino
     Andres Sosa y Bautista Troccalino : 
                 Nada.
 
+Prueba de UniTest: https://docs.google.com/spreadsheets/d/12T4x5Y6Eev_0RiT7EuWoYbdG0POPEDRq2pJV9pfdhjc/edit?usp=sharing
 Como funciona la pagina: 
   Principalmente la pagina nos va a pedir que iniciemos sesion, en caso de no estar registrado, podemos regsitarnos con el boton de registrase
   Una vez registrados, podemos iniciar sesion que nos llevará a la pagina principal con un mensaje de bienvendia
