@@ -8,6 +8,7 @@ Grupo de Baltasar Klix Jones, Andres Sosa, Bautista Troccalino
     Andres Sosa y Bautista Troccalino : 
                 Nada.
 
+Como funciona la pagina: 
   Principalmente la pagina nos va a pedir que iniciemos sesion, en caso de no estar registrado, podemos regsitarnos con el boton de registrase
   Una vez registrados, podemos iniciar sesion que nos llevará a la pagina principal con un mensaje de bienvendia
   En la pagina principal tenemos la barra navegable, donde en Buscar Vheiculo podremos ver todas las paginas; tambien tendremos nuestra foto de perfil,
