@@ -1,10 +1,10 @@
 # Pag.Autos-final
 
-Proyecto Final de CODERHOUSE:
-# Grupo de Baltasar Klix Jones, Andres Sosa, Bautista Troccalino
-# ¿Que hizo cada uno ? 
- Baltasar Klix Jones: Todo
- Andres Sosa, Bautista Troccalino : Nada
+#Proyecto Final de CODERHOUSE:
+Grupo de Baltasar Klix Jones, Andres Sosa, Bautista Troccalino
+¿Que hizo cada uno ? 
+    Baltasar Klix Jones: Todo.
+    Andres Sosa y Bautista Troccalino : Nada.
 
   Principalmente la pagina nos va a pedir que iniciemos sesion, en caso de no estar registrado, podemos regsitarnos con el boton de registrase
   Una vez registrados, podemos iniciar sesion que nos llevará a la pagina principal con un mensaje de bienvendia
