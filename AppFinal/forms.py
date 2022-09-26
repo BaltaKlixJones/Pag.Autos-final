@@ -54,6 +54,7 @@ class AvatarForm(forms.Form):
     imagen = forms.ImageField(label="Imagen")
 
 
+
 class FormMensajes(forms.Form):
 	mensaje = forms.CharField(widget=forms.Textarea(attrs = {
 

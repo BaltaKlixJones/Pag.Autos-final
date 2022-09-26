@@ -133,7 +133,11 @@
 
             </table>
 
-            <button type="submit" class=""> Guardar </button>
+            <ul class="actions">
+                <button type="submit" class=""> Guardar </button>
+                
+                <li><input type="reset" value="Borrar" /></li>
+            </ul>
         </form>
     </div>
 
@@ -146,7 +150,12 @@
     <form action="{% url 'buscarmotos' %}" method="GET"> {% csrf_token %}
 
         <p>Marca: <input type="text" name="marca", id="marca"></p>
-        <input type="submit", value="Buscar">
+        <ul class="actions">
+            <input type="submit", value="Buscar">
+            
+            <li><input type="reset" value="Borrar" /></li>
+        </ul>
+        
     </form>
 </div>
 

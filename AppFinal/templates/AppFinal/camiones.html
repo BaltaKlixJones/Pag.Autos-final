@@ -12,11 +12,11 @@
 {% endblock %}
 
 {% block subtitulo %}
-<p>Camiones son utilizados para transporte ...</p>
+<p>Un camión es un vehículo motorizado diseñado para el transporte de productos y mercancías.</p>
 {% endblock %}
 
 {% block imagentitulo %}
-<img src="/static/AppFinal/assets/images/autos.fon.jpg" alt="" />
+<img src="/static/AppFinal/assets/images/camion.pagina2.jpg" alt="" />
 {% endblock %}
 
 {% block cargar %} 
@@ -33,16 +33,16 @@
 
 {% block info1 %}
 <a  class="image">
-    <img src="/static/AppFinal/assets/images/primerAuto.jpg" alt="" data-position="center center" />
+    <img src="/static/AppFinal/assets/images/primerCamion.jpg" alt="" data-position="center center" />
 </a>
 <div class="content">
     <div class="inner">
         <header class="major">
             <h3>El primer camion</h3>
         </header>
-        <p>Es el primer coche del mundo y fue inventado por un francés hace más de 250 años. A pesar del paso del tiempo, el automóvil todavía existe. El carro de Cugnot, en el Museo de Artes y Oficios de París. Corría el año 1769...</p>
+        <p>Se trató de un carro con motor trasero con cuatro caballos de fuerza, equipado con una transmisión por correa con cuatro velocidades y un motor Phoenix de dos cilindros de 1.06 litros. El conductor se sentaba en el asiento frontal como si estuviera conduciendo un carruaje</p>
         <ul class="actions">
-            <li><a href="https://motor.elpais.com/actualidad/quien-invento-el-coche-este-es-el-primer-automovil-de-la-historia/#:~:text=Es%20el%20primer%20coche%20del,tiempo%2C%20el%20autom%C3%B3vil%20todav%C3%ADa%20existe.&text=El%20carro%20de%20Cugnot%2C%20en,Corr%C3%ADa%20el%20a%C3%B1o%201769." class="button" target="_blank">Ver más</a></li>
+            <li><a href="https://webpicking.com/cual-fue-el-primer-camion-de-la-historia/" class="button" target="_blank">Ver más</a></li>
         </ul>
     </div>
 </div>
@@ -56,9 +56,9 @@
             <header class="major">
                 <h3>Creador</h3>
             </header>
-            <p>El 29 de enero de 1886, Carl Benz patentó su “vehículo motorizado con motor de gasolina” de tres ruedas, y se consideró como el día del nacimiento del automóvil.</p>
+            <p>En 1895 Karl Benz diseñó y construyó el primer camión de la historia utilizando un motor de combustión interna. Más tarde ese año algunos de los camiones de Benz se modificaron para convertirse en el primer autobús por el Netphener, la primera empresa de motorbus en la historia.</p>
             <ul class="actions">
-                <li><a href="https://es.wikipedia.org/wiki/Carl_Benz" class="button" target="_blank">Ver más</a></li>
+                <li><a href="https://es.wikipedia.org/wiki/Cami%C3%B3n#:~:text=En%201895%20Karl%20Benz%20dise%C3%B1%C3%B3,de%20motorbus%20en%20la%20historia." class="button" target="_blank">Ver más</a></li>
             </ul>
         </div>
     </div>
@@ -135,7 +135,11 @@
 
             </table>
 
-            <button type="submit" class=""> Guardar </button>
+            <ul class="actions">
+                <button type="submit" class=""> Guardar </button>
+                
+                <li><input type="reset" value="Borrar" /></li>
+            </ul>
         </form>
     </div>
 
@@ -148,7 +152,12 @@
     <form action="{% url 'buscarcamiones' %}" method="GET"> {% csrf_token %}
 
         <p>Marca: <input type="text" name="marca", id="marca"></p>
-        <input type="submit", value="Buscar">
+        <ul class="actions">
+            <input type="submit", value="Buscar">
+            
+            <li><input type="reset" value="Borrar" /></li>
+        </ul>
+        
     </form>
 </div>
 

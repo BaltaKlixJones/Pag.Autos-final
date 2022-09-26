@@ -1,0 +1,65 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+
+{% block titulo %}
+
+<title>Blog</title>
+
+{% endblock %}
+
+{% block mensaje %}
+
+<h3>{{ mensaje }}</h3>
+
+{% endblock %}
+
+{% block titulodeinicio %}
+
+<h1>Blog de fotos</h1>
+
+{% endblock %}
+
+
+
+
+{% block botones %}
+
+<a href="#menu" class="btn btn-outline-dark">Buscar vehiculo</a>
+<a href="{% url 'inbox' %}">Mensajes</a>
+{% endblock %}
+
+
+
+{% block imagenes %} 
+<div id="main" >
+
+    <!-- One -->
+        <section style="position:static; width:90%; margin: 0px auto;">
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/carreras.autos.jpg" alt="" style="width: 400px;" />
+                </span>
+                
+                
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/carreras.motos.jpg" alt="" style="width: 400px;"/>
+                </span>
+                
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/carreras.aviones.jpg" alt="" style="width: 400px;"/>
+                </span>
+                
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/carreras.camiones.jpg" alt="" style="width: 400px;"/>
+                </span>
+                
+            </article>
+            
+        </section>
+{% endblock %}

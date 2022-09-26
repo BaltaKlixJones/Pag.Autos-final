@@ -41,19 +41,22 @@ class Camiones(models.Model):
 
 
 class Aviones(models.Model):
-    modelo= models.CharField(max_length=50)
-    color=models.CharField(max_length=50)
-    año = models.IntegerField()
+	modelo= models.CharField(max_length=50)
+	color=models.CharField(max_length=50)
+	año = models.IntegerField()
 
-    def __str__(self):
-        return self.modelo +" " + self.color
+	def __str__(self):
+		return self.color +" " + self.modelo
 
 
 class Avatar(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to='avatares', null= True, blank= True)
 
-#.............................#
+
+
+
+#..........................................#
 
 User = settings.AUTH_USER_MODEL
 

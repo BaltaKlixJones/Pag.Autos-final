@@ -21,7 +21,7 @@
 				<!-- Header -->
 				<!-- Note: The "styleN" class below should match that of the banner element. -->
 					<header id="header" class="alt style2">
-						<a href="{% url 'inicio' %}" class="logo"><strong>Inicio</strong> <span>By equipo coder</span></a>
+						<a href="{% url 'inicio' %}" class="logo"><strong>Inicio</strong> <span>By Balta</span></a>
 						
 						<nav>
 							{% block navegacion %} {% endblock %}
@@ -101,45 +101,12 @@
 								</section>
 
 						<!-- Three -->
-						<section style="width: 60px;">
-							<div style="width: 60px;">
-								<article>
-									<span >
-										<img src="/static/AppFinal/assets/images/ferrari.inicio.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="{% url 'autos' %}" class="link">Autos</a></h3>
-										<p>Los mejores autos deportivos </p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="/static/AppFinal/assets/images/moto.inicio.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="{% url 'motos' %}" class="link">Motos</a></h3>
-										<p>Motos de carreras y de paseos</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="/static/AppFinal/assets/images/avion.inicio.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="{% url 'aviones' %}" class="link">Aviones</a></h3>
-										<p>Existen diferentes tipos de aviones...</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="/static/AppFinal/assets/images/camion.inicio.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="{% url 'camiones' %}" class="link">Camiones</a></h3>
-										<p>Largas distancias y cargas pesadas</p>
-									</header>
-								</article>
-						</section>
+						
+						{% block blog %} {% endblock %}
+								
+						
+
+
 							<section id="three">
 								<div class="inner">
 									{% block nuestrosvehiculos %} {% endblock %}
@@ -176,11 +143,11 @@
 					<footer id="footer">
 						<div class="inner">
 							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 							</ul>
 							<ul class="copyright">
 								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>

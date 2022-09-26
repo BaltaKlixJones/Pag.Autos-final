@@ -274,7 +274,7 @@ def editarCamiones(request, id):
 
     else:
         formulario = CamionFormulario(initial={"marca": camion.marca , "modelo": camion.modelo , "color": camion.color , "año": camion.año})
-        return render (request, "AppFinal/editarCamiones.html", {"formulario": formulario, "motos_marca": camion.marca , "id":camion.id})
+        return render (request, "AppFinal/editarCamiones.html", {"formulario": formulario, "camiones_marca": camion.marca , "id":camion.id})
 
 
 #.............................................................................#
@@ -283,31 +283,64 @@ def editarCamiones(request, id):
 # Pagina para crear y ver aviones
 @login_required
 def aviones(request):
+    ver_aviones= Aviones.objects.all()
     if request.method == "POST":
         miFormulario= AvionFormulario(request.POST)
         print(miFormulario)
         if miFormulario.is_valid():
             info = miFormulario.cleaned_data
-            modelo= info.get("modelo")
-            color= info.get("color")
-            año= info.get("año")
-            avion= Aviones( modelo= modelo, color= color, año= año)
+            avion=Aviones(modelo= info['modelo'], color=info['color'], año= info['año'])
             avion.save()
-            return render (request, "AppFinal/aviones.html", {"mensaje": "Avion creado con exito!"})
+            return render (request, "AppFinal/aviones.html", {"formulario": miFormulario, "mensaje": "Avion creado con exito!" , "ver_aviones": ver_aviones})
         else:
             return render(request, "AppFinal/aviones.html", {"mensaje": "Error!"} )
     else:
         miFormulario= AvionFormulario()
-        return render (request, "AppFinal/aviones.html", {"formulario": miFormulario})
+
+    return render (request, "AppFinal/aviones.html", {"formulario": miFormulario,  "ver_aviones": ver_aviones})
 
 # Buscar avion 
-
+def buscaraviones(request):
+    if request.GET["color"]:
+        color= request.GET["color"]
+        avion_color= Aviones.objects.filter(color__icontains= color)
+        if len(avion_color) !=0:
+            return render(request, "AppFinal/resultadoBusquedaAvion.html", {"aviones": avion_color})
+        else:
+            return render(request, "AppFinal/resultadoBusquedaAvion.html", {"mensaje": "No se encontraron resultados"})
+    else:
+        return render (request, "AppFinal/resultadoBusquedaAvion.html", {"mensaje": "No se enviaron datos!"})
 
 # ver aviones para editar
+def leeraviones(request):
+    leeraviones= Aviones.objects.all()
+    return render (request, "AppFinal/leeraviones.html", {"leeraviones": leeraviones})
 
 # elminar aviones
-
+def eliminarAvion(request, id ):
+    eliminar_avion= Aviones.objects.get(id=id)
+    eliminar_avion.delete()
+    leeraviones= Aviones.objects.all()
+    return render (request, "AppFinal/leeraviones.html", {"leeraviones": leeraviones, "mensaje": "Avion eliminado!"})
 # editar aviones
+def editarAviones(request, id):
+    avion = Aviones.objects.get(id=id)
+    if request.method == "POST":
+        form = AvionFormulario(request.POST)
+        if form.is_valid():
+            info= form.cleaned_data
+            avion.modelo = info["modelo"]
+            avion.color = info["color"]
+            avion.año = info["año"]
+            avion.save()
+            leeraviones=Aviones.objects.all()
+            return render (request, "AppFinal/leeraviones.html", {"leeraviones": leeraviones, "mensaje": "Avion editado!"})
+
+    else:
+        formulario = AvionFormulario(initial={"modelo": avion.modelo , "color": avion.color , "año": avion.año})
+        return render (request, "AppFinal/editarAviones.html", {"formulario": formulario, "aviones_color": avion.color , "id":avion.id})
+
+
 
 #.............................................................................#
 # Editar usuario
@@ -358,10 +391,16 @@ def obtenerAvatar(request):
 
 
 #.............................................................................#
-# Nostros
+# blog
+def blog(request):
+    return render (request, "AppFinal/blog.html")
 
-def nosotros(request):
-    pass
+
+
+#Subir imagen
+
+
+
 
 # Manejo de error 404
 def not_found(request):

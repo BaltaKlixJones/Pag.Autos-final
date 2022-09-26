@@ -30,6 +30,11 @@ urlpatterns = [
     path("eliminarCamion/<id>", eliminarCamion, name="eliminarCamion"),
     path("editarCamion/<id>", editarCamiones, name="editarCamion"),
      path("buscarcamiones/", buscarcamiones , name="buscarcamiones"),
+     # ......................Aviones......................
+    path("leeraviones/", leeraviones, name="leeraviones"),
+    path("eliminarAvion/<id>", eliminarAvion, name="eliminarAvion"),
+    path("editarAvion/<id>", editarAviones, name="editarAvion"),
+     path("buscaraviones/", buscaraviones , name="buscaraviones"),
     # ..............Login, logout, register......................
     path("login/", login_request, name='login'),
     path('register/', register, name= 'register'),
@@ -37,6 +42,7 @@ urlpatterns = [
     # ..................Editar Perfil.......................
     path('editarPerfil/', editarPerfil, name= 'editarPerfil'),
     # ......................Otro......................
+    path('blog/', blog, name='blog'),
     path('agregarAvatar/', agregarAvatar, name= 'agregarAvatar'),
     path('Error/', not_found, name= 'not-found'),
     path('elements/', elem, name='elements'),
