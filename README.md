@@ -6,7 +6,9 @@ Grupo de Baltasar Klix Jones, Andres Sosa, Bautista Troccalino
     Baltasar Klix Jones: 
                 Todo.
     Andres Sosa y Bautista Troccalino : 
-                Nada.
+                No se presentaron.
+
+Link a video de la pagina funcionando : https://screenrec.com/share/UMEcxNe3H7
 
 Prueba de UniTest: https://docs.google.com/spreadsheets/d/12T4x5Y6Eev_0RiT7EuWoYbdG0POPEDRq2pJV9pfdhjc/edit?usp=sharing
 Como funciona la pagina: 
@@ -23,4 +25,4 @@ Como funciona la pagina:
   Mas abajo podremos ver los vehiculos registrados, donde podremos agregar el que quieramos, buscarlo,
   y en Editar podremos editar y borrar el vehiculo que deseemos.
   
-  Por ultimo, en la pagina de inicio, se encuentra acerca de los creadores de la pagina, que en este caso uno solo (Baltasar) y al apretar en el se puede ver un poco de acerca de él.
+  Por ultimo, en la pagina de inicio, se encuentra acerca de los creadores de la pagina, que en este caso uno solo (Baltasar) y al apretar en el nombre te lleva a una pagina del perfil donde se puede ver un poco de informacion de acerca de él.
